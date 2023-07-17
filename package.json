@@ -22,6 +22,7 @@
     "jsonp": "^0.2.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
+    "nodemon": "^3.0.1",
     "notistack": "^2.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -42,7 +43,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev":"nodemon"
   },
   "eslintConfig": {
     "extends": [

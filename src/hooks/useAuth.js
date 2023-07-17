@@ -45,8 +45,9 @@ const useAuth = () => {
    *
    */
   const forgotPasswordRequest = (email) => {
+   
     setIsLoading(true);
-    return Auth.forgotPassword(email).finally(() => setIsLoading(false));
+    return Auth.forgotPassword(email).finally(() => setIsLoading(false))
   };
 
   /**

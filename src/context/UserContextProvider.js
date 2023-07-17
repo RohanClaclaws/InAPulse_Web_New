@@ -20,6 +20,7 @@ export const UserContextProvider = ({ children }) => {
         }
       })
       .then((user) => {
+        console.log(user)
         setIsLoading(false)
         setUser(user);
       })

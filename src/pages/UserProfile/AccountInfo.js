@@ -12,6 +12,8 @@ import {
 import ChangePassword from "./ChangePassword";
 import useAuth from "../../hooks/useAuth";
 
+
+
 const AccountInfo = () => {
   const { user, forgotPasswordRequest } = useAuth();
   const [isChangePassword, setIsChangePassword] = useState(false);
@@ -28,11 +30,11 @@ const AccountInfo = () => {
     setIsChangePassword(true);
 
     try {
-      forgotPasswordRequest(user.attributes.email).then((res) => {
+       forgotPasswordRequest(user.attributes.email).then((res) => {
         console.log("Password change request has been sent!");
       });
     } catch (error) {
-      //console.log(error);
+      console.log(error);
     }
   };
 
@@ -54,11 +56,13 @@ const AccountInfo = () => {
             flexWrap={"wrap"}
             gap={4}
           >
-            <InputGroup
-              label={"Full Name"}
+            <InputGroup 
+              label={"Full Names"}
               placeholder={user.attributes.name}
+             
             />
             <InputGroup label={"Email"} placeholder={user.attributes.email} />
+          
           </Stack>
 
           <br />

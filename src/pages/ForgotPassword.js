@@ -13,6 +13,7 @@ export default function ForgotPassword() {
   const [isRequesting, setIsRequesting] = useState(true);
   const [user, setUser] = useState(null);
   const [show, setShow] = useState(false);
+  const [showCheckPassword,setShowCheckPassword]=useState(false)
 
   let initialValues = isRequesting
     ? { email: "" }
@@ -36,8 +37,8 @@ export default function ForgotPassword() {
           type: show ? "text" : "password",
           InputProps: {
             endAdornment: (
-              <InputAdornment position="start">
-                <IconButton onClick={() => setShow((old) => !old)}>
+              <InputAdornment position="end">
+                <IconButton  onClick={() => setShow((old) => !old)}>
                   {show ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
               </InputAdornment>
@@ -47,8 +48,18 @@ export default function ForgotPassword() {
         {
           label: "Confirm Password",
           key: "confirmPassword",
-          type: show ? "text" : "password",
+          type: showCheckPassword ? "text" : "password",
+          InputProps: {
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton  onClick={() => setShowCheckPassword((old) => !old)}>
+                  {showCheckPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            ),
+          },
         },
+       
       ];
 
   const stepHandler = (user) => {
